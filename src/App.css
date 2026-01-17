@@ -1,0 +1,523 @@
+/* =====================================================
+   THEME VARIABLES
+===================================================== */
+
+:root {
+  --bg-main: #ffffff;
+  --bg-secondary: #f3f4f6;
+  --bg-dark: #f8f9fa;
+  --bg-footer: #e5e7eb;
+
+  --text-main: #1f2933;
+  --text-muted: #4b5563;
+  --text-light: #111111;
+  --text-footer: #374151;
+
+  --accent: #4f9eff;
+  --accent-hover: #2d7ee0;
+}
+
+body.dark {
+  --bg-main: #0b0b0b;
+  --bg-secondary: #121212;
+  --bg-dark: #0b0b0b;
+  --bg-footer: #080808;
+
+  --text-main: #e6e6e6;
+  --text-muted: #bbbbbb;
+  --text-light: #ffffff;
+  --text-footer: #bbbbbb;
+}
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ensures sections don’t hide under navbar when scrolling */
+section {
+  scroll-margin-top: 90px;
+}
+
+/* =====================================================
+   NAVBAR (CLEAN REWRITE)
+===================================================== */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  height: 64px;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+}
+
+/* ----- Left side (name + icons) ----- */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+/* ----- Icons ----- */
+.nav-icons img {
+  width: 2rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.nav-icons img:hover {
+  transform: scale(1.1);
+}
+
+/* ----- Right side (menu + toggle) ----- */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+/* ----- Nav list (desktop layout) ----- */
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav li {
+  cursor: pointer;
+  transition: color 0.25s;
+}
+
+nav li:hover {
+  color: var(--accent);
+}
+
+/* Active link indicator */
+nav .active {
+  color: var(--accent);
+  font-weight: 700;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 4px;
+}
+
+/* =====================================================
+   HAMBURGER (base styles)
+===================================================== */
+
+.hamburger {
+  display: none;
+  /* hidden on desktop */
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: var(--text-light);
+  transition: 0.3s;
+}
+
+/* Animate hamburger into X when menu is open */
+nav.menu-open .hamburger span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+nav.menu-open .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+
+nav.menu-open .hamburger span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+
+/* =====================================================
+   THEME TOGGLE (sliding pill)
+===================================================== */
+
+.theme-toggle {
+  position: relative;
+  width: 52px;
+  height: 26px;
+  border-radius: 50px;
+  border: 1px solid var(--accent);
+  background: var(--bg-secondary);
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.15s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.03);
+}
+
+.theme-toggle::before {
+  content: "🌙";
+  position: absolute;
+  left: 4px;
+  top: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+body.dark .theme-toggle::before {
+  transform: translateX(26px);
+  content: "☀️";
+}
+
+/* =====================================================
+   HERO SECTION
+===================================================== */
+
+#home {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, var(--bg-main), var(--bg-secondary));
+  color: var(--text-light);
+  text-align: center;
+  padding-top: 4rem;
+}
+
+#home h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+#home p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  color: var(--text-muted);
+}
+
+#home a {
+  background-color: var(--accent);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  transition: background 0.3s;
+}
+
+#home a:hover {
+  background-color: var(--accent-hover);
+}
+
+/* =====================================================
+   ABOUT SECTION
+===================================================== */
+
+#about {
+  background: var(--bg-secondary);
+}
+
+#about h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+#about p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+/* =====================================================
+   PROJECTS SECTION
+===================================================== */
+
+#projects {
+  background: var(--bg-main);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.project-card {
+  background: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: left;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.project-card h3 {
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  color: var(--text-muted);
+}
+
+.project-card a {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.project-card a:hover {
+  text-decoration: underline;
+}
+
+/* =====================================================
+   CONTACT SECTION
+===================================================== */
+
+#contact {
+  background: var(--bg-dark);
+  color: var(--text-light);
+  text-align: center;
+}
+
+#contact p {
+  color: var(--text-footer);
+  margin-bottom: 1.5rem;
+}
+
+#contact a {
+  display: inline-block;
+  background: var(--accent);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  transition: background 0.3s;
+}
+
+#contact a:hover {
+  background: var(--accent-hover);
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.contact-icons img {
+  width: 2.2rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.contact-icons img:hover {
+  transform: scale(1.1);
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+  background: var(--bg-footer);
+  color: var(--text-footer);
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  min-height: 10vh;
+  scroll-margin-top: 90px;
+}
+
+/* =====================================================
+   SECTION MIN HEIGHT
+===================================================== */
+
+#about,
+#projects,
+#contact {
+  min-height: 90vh;
+}
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+/* Hero animation */
+#home h1,
+#home p,
+#home a {
+  opacity: 0;
+  animation: slideUp 0.9s ease forwards;
+}
+
+#home p {
+  animation-delay: 0.2s;
+}
+
+#home a {
+  animation-delay: 0.4s;
+}
+
+/* About section */
+#about h2,
+#about p {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Projects section */
+#projects h2 {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.project-card {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Stagger project cards */
+.project-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.project-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.project-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* Contact section */
+#contact h2,
+#contact p,
+#contact a {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Keyframes */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =====================================================
+   MOBILE LAYOUT (≤ 768px)
+===================================================== */
+
+@media (max-width: 768px) {
+
+  /* Show hamburger */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Turn nav-right into dropdown */
+  .nav-right {
+    position: absolute;
+    top: 64px;
+    /* matches nav height */
+    right: 0;
+    background: var(--bg-dark);
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    display: flex;
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: transform 0.25s ease, opacity 0.2s ease;
+  }
+
+  /* When menu is open */
+  .nav-right.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+  }
+
+  /* Stack links vertically */
+  nav ul {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  #home h1 {
+    font-size: 2.2rem;
+  }
+
+  #home p {
+    font-size: 1.1rem;
+  }
+
+  section {
+    padding: 4rem 1rem;
+  }
+}
