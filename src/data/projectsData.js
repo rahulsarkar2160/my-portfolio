@@ -12,13 +12,13 @@ export const projects = [
             "JavaScript"
         ],
         github: "https://github.com/rahulsarkar2160",
-        demo: "https://memorymap-yvcg.onrender.com/"
+        link: "https://memorymap-yvcg.onrender.com/"
     },
     {
         title: "Weather App",
         description: "Displays real-time weather using OpenWeather API.",
         tech: ["React", "API", "Tailwind"],
         github: "#",
-        demo: "#"
+        link: "#"
     }
 ];
