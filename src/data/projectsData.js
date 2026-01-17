@@ -1,10 +1,18 @@
 export const projects = [
     {
-        title: "Color Grid Generator",
-        description: "A React app that generates color grids dynamically based on input.",
-        tech: ["React", "CSS", "JavaScript"],
-        github: "https://github.com/yourusername/color-grid",
-        demo: "https://yourportfolio.vercel.app/color-grid"
+        title: "MemoryMap",
+        description: "Full-stack app to log visited places with images and personal memories.",
+        tech: [
+            "Node.js",
+            "Express.js",
+            "MongoDB",
+            "Passport.js",
+            "Cloudinary",
+            "Mapbox",
+            "JavaScript"
+        ],
+        github: "https://github.com/rahulsarkar2160",
+        demo: "https://memorymap-yvcg.onrender.com/"
     },
     {
         title: "Weather App",
