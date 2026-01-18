@@ -4,9 +4,9 @@
 
 :root {
   --bg-main: #ffffff;
-  --bg-secondary: #f3f4f6;
-  --bg-dark: #f8f9fa;
-  --bg-footer: #e5e7eb;
+  --bg-secondary: #dddddd;
+  --bg-dark: #dedede;
+  --bg-footer: #fafafa;
 
   --text-main: #1f2933;
   --text-muted: #4b5563;
@@ -19,9 +19,9 @@
 
 body.dark {
   --bg-main: #0b0b0b;
-  --bg-secondary: #121212;
-  --bg-dark: #0b0b0b;
-  --bg-footer: #080808;
+  --bg-secondary: #282828;
+  --bg-dark: #1f1f1f;
+  --bg-footer: #000000;
 
   --text-main: #e6e6e6;
   --text-muted: #bbbbbb;
@@ -243,6 +243,22 @@ body.dark .theme-toggle::before {
 
 #home a:hover {
   background-color: var(--accent-hover);
+}
+
+.hero-img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 5px solid var(--bg-dark);
+  transition: transform 0.5s ease, border-color 0.5s ease;
+}
+
+.hero-img:hover {
+  transform: scale(1.1);
+  border: 5px solid var(--accent-hover);
+  transition: transform 1s ease, border-color 1s ease;
 }
 
 /* =====================================================
