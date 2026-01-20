@@ -31,17 +31,18 @@ export default function Navbar() {
                     className="theme-toggle"
                     aria-label="Toggle light and dark theme"
                     onClick={() => setDarkMode(!darkMode)}
+                    title="Toggle Theme"
                 />
                 <div className="nav-icons">
-                    <a href="https://github.com/rahulsarkar2160" target="_blank" rel="noreferrer">
+                    <a href="https://github.com/rahulsarkar2160" target="_blank" rel="noreferrer" title="GitHub">
                         <img src={darkMode ? githubDark : githubLight} alt="GitHub" />
                     </a>
 
-                    <a href="https://linkedin.com/in/rahul-sarkar-1150b5202" target="_blank" rel="noreferrer">
+                    <a href="https://linkedin.com/in/rahul-sarkar-1150b5202" target="_blank" rel="noreferrer" title="LinkedIn">
                         <img src={darkMode ? linkedinDark : linkedinLight} alt="LinkedIn" />
                     </a>
 
-                    <a href="mailto:rahulsarkar4320@gmail.com">
+                    <a href="mailto:rahulsarkar4320@gmail.com" title="Email">
                         <img src={darkMode ? emailDark : emailLight} alt="Email" />
                     </a>
 
