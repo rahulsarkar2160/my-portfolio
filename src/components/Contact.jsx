@@ -41,7 +41,7 @@ export default function Contact() {
                     <img src={darkMode ? emailDark : emailLight} alt="Email" />
                 </a>
                 <a
-                    href="/Rahul_Sarkar_FullStack_Resume.pdf"
+                    href="/Rahul_Sarkar_FullStack_Developer.pdf"
                     download
                     title="Download Resume"
                 >
