@@ -46,6 +46,21 @@ export const projects = [
         link: "https://chatbot-webapp-9mey.onrender.com/"
     },
 
+    {
+        title: "SpendSmart",
+        description: "Expense tracking web app to record, categorize, and analyze personal spending.",
+        tech: [
+            "React",
+            "JavaScript",
+            "Node.js",
+            "Express.js",
+            "MongoDB",
+            "JWT",
+            "REST API"
+        ],
+        github: "https://github.com/rahulsarkar2160/spendsmart-frontend",
+        link: "https://spendsmart-seven.vercel.app/"
+    }
 
     // template
 
