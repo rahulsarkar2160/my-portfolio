@@ -1,5 +1,21 @@
 export const projects = [
     {
+        title: "SpendSmart",
+        description: "Expense tracking web app to record, categorize, and analyze personal spending.",
+        tech: [
+            "React",
+            "JavaScript",
+            "Node.js",
+            "Express.js",
+            "MongoDB",
+            "JWT",
+            "REST API"
+        ],
+        github: "https://github.com/rahulsarkar2160/spendsmart-frontend",
+        link: "https://spendsmart-seven.vercel.app/"
+    },
+
+    {
         title: "MemoryMap",
         description: "Full-stack app to log visited places with images and personal memories.",
         tech: [
@@ -11,7 +27,7 @@ export const projects = [
             "Mapbox",
             "JavaScript"
         ],
-        github: "https://github.com/rahulsarkar2160",
+        github: "https://github.com/rahulsarkar2160/MemoryMap",
         link: "https://memorymap-yvcg.onrender.com/"
     },
 
@@ -46,21 +62,7 @@ export const projects = [
         link: "https://chatbot-webapp-9mey.onrender.com/"
     },
 
-    {
-        title: "SpendSmart",
-        description: "Expense tracking web app to record, categorize, and analyze personal spending.",
-        tech: [
-            "React",
-            "JavaScript",
-            "Node.js",
-            "Express.js",
-            "MongoDB",
-            "JWT",
-            "REST API"
-        ],
-        github: "https://github.com/rahulsarkar2160/spendsmart-frontend",
-        link: "https://spendsmart-seven.vercel.app/"
-    }
+
 
     // template
 
