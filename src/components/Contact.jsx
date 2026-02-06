@@ -14,13 +14,15 @@ export default function Contact() {
     );
 
     useEffect(() => {
-        const observer = new MutationObserver(() => {
+        const handleThemeChange = () => {
             setDarkMode(document.body.classList.contains("dark"));
-        });
+        };
 
-        observer.observe(document.body, { attributes: true, attributeFilter: ["class"] });
+        window.addEventListener("theme-change", handleThemeChange);
 
-        return () => observer.disconnect();
+        return () => {
+            window.removeEventListener("theme-change", handleThemeChange);
+        };
     }, []);
 
     return (
@@ -29,19 +31,30 @@ export default function Contact() {
             <p>Let’s connect or work together 🚀</p>
 
             <div className="contact-icons">
-                <a href="https://github.com/rahulsarkar2160" target="_blank" rel="noreferrer" title="GitHub">
+                <a
+                    href="https://github.com/rahulsarkar2160"
+                    target="_blank"
+                    rel="noreferrer"
+                    title="GitHub"
+                >
                     <img src={darkMode ? githubDark : githubLight} alt="GitHub" />
                 </a>
 
-                <a href="https://linkedin.com/in/rahul-sarkar-1150b5202" target="_blank" rel="noreferrer" title="LinkedIn">
+                <a
+                    href="https://linkedin.com/in/rahul-sarkar-1150b5202"
+                    target="_blank"
+                    rel="noreferrer"
+                    title="LinkedIn"
+                >
                     <img src={darkMode ? linkedinDark : linkedinLight} alt="LinkedIn" />
                 </a>
 
                 <a href="mailto:rahulsarkar4320@gmail.com" title="Email">
                     <img src={darkMode ? emailDark : emailLight} alt="Email" />
                 </a>
+
                 <a
-                    href="/Rahul_Sarkar_FullStack_Developer.pdf"
+                    href="/resume/Rahul_Sarkar_FullStack_Developer.pdf"
                     download
                     title="Download Resume"
                 >

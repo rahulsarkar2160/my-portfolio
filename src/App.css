@@ -3,7 +3,7 @@ FONTS
 ========================= */
 @font-face {
   font-family: "Handjet";
-  src: url("../public/fonts/Handjet/Handjet-SemiBold.ttf") format("truetype");
+  src: url("../src/assets/fonts/Handjet/Handjet-SemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -17,24 +17,26 @@ FONTS
   font-display: swap;
 }
 
-
 /* =====================================================
    THEME VARIABLES
 ===================================================== */
 
 :root {
-  --bg-main: #ffffff;
-  --bg-secondary: #dddddd;
-  --bg-dark: #dedede;
-  --bg-footer: #fafafa;
+  /* Backgrounds */
+  --bg-main: #f8fafc;
+  --bg-secondary: #f1f5f9;
+  --bg-dark: #e2e8f0;
+  --bg-footer: #e5e7eb;
 
-  --text-main: #1f2933;
-  --text-muted: #4b5563;
-  --text-light: #111111;
-  --text-footer: #374151;
+  /* Text */
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --text-light: #020617;
+  --text-footer: #334155;
 
-  --accent: #4f9eff;
-  --accent-hover: #2d7ee0;
+  /* Accent */
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
 }
 
 body.dark {
@@ -70,7 +72,7 @@ body {
 }
 
 h2 {
-  font-family: Handjet;
+  font-family: "Handjet", system-ui, sans-serif;
 }
 
 a {
@@ -82,13 +84,13 @@ ul {
   list-style: none;
 }
 
-/* ensures sections don’t hide under navbar when scrolling */
 section {
   scroll-margin-top: 90px;
+  padding: 6rem 2rem;
 }
 
 /* =====================================================
-   NAVBAR (CLEAN REWRITE)
+   NAVBAR
 ===================================================== */
 
 nav {
@@ -101,38 +103,42 @@ nav {
   top: 0;
   z-index: 100;
   height: 64px;
-  background-color: var(--bg-dark);
-  color: var(--text-light);
+
+  /* 🔥 theme-aware now */
+  background-color: var(--bg-main);
+  color: var(--text-main);
+
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
-/* ----- Left side (name + icons) ----- */
+/* Left side */
 .nav-left {
   display: flex;
   align-items: center;
   gap: 1.2rem;
 }
 
-/* ----- Icons ----- */
+/* Icons */
 .nav-icons img {
   width: 2.2rem;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, filter 0.2s ease;
 }
 
 .nav-icons img:hover {
-  transform: scale(1.2);
+  transform: scale(1.15);
+  filter: brightness(0.85);
 }
 
-/* ----- Right side (menu + toggle) ----- */
+/* Right side */
 .nav-right {
   display: flex;
   align-items: center;
   gap: 1.2rem;
-  font-family: Handjet;
-
+  font-family: "Handjet", system-ui, sans-serif;
 }
 
-/* ----- Nav list (desktop layout) ----- */
+/* Nav list */
 nav ul {
   display: flex;
   gap: 1.5rem;
@@ -140,28 +146,39 @@ nav ul {
 
 nav li {
   cursor: pointer;
-  transition: color 0.25s;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.25s ease;
 }
 
 nav li:hover {
   color: var(--accent);
 }
 
-/* Active link indicator */
+/* Active link */
 nav .active {
   color: var(--accent);
-  font-weight: 700;
-  border-bottom: 2px solid var(--accent);
-  padding-bottom: 4px;
+  font-weight: 600;
+  /* avoid fake bold */
+}
+
+nav .active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
 }
 
 /* =====================================================
-   HAMBURGER (base styles)
+   HAMBURGER
 ===================================================== */
 
 .hamburger {
   display: none;
-  /* hidden on desktop */
   flex-direction: column;
   gap: 5px;
   background: none;
@@ -177,7 +194,6 @@ nav .active {
   transition: 0.3s;
 }
 
-/* Animate hamburger into X when menu is open */
 nav.menu-open .hamburger span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -190,24 +206,23 @@ nav.menu-open .hamburger span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-
 /* =====================================================
-   THEME TOGGLE (sliding pill)
+   THEME TOGGLE
 ===================================================== */
 
 .theme-toggle {
-  position: relative;
   width: 52px;
   height: 26px;
   border-radius: 50px;
   border: 1px solid var(--accent);
   background: var(--bg-secondary);
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.15s ease;
+  position: relative;
+  transition: transform 0.15s ease;
 }
 
 .theme-toggle:hover {
-  transform: scale(1.2);
+  transform: scale(1.15);
 }
 
 .theme-toggle::before {
@@ -218,12 +233,11 @@ nav.menu-open .hamburger span:nth-child(3) {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: transparent;
   border: 1px solid var(--accent);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.5s ease;
+  transition: transform 0.4s ease;
 }
 
 body.dark .theme-toggle::before {
@@ -232,7 +246,7 @@ body.dark .theme-toggle::before {
 }
 
 /* =====================================================
-   HERO SECTION
+   HERO
 ===================================================== */
 
 #home {
@@ -240,13 +254,14 @@ body.dark .theme-toggle::before {
   margin-top: 64px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, var(--bg-main), var(--bg-secondary));
-  color: var(--text-light);
-  text-align: center;
-}
+  justify-content: center;
 
+  background: linear-gradient(135deg, var(--bg-main), var(--bg-secondary));
+  text-align: center;
+  color: var(--text-main);
+  /* 🔥 fixed contrast */
+}
 
 #home h1 {
   font-size: 3rem;
@@ -255,12 +270,12 @@ body.dark .theme-toggle::before {
 
 #home p {
   font-size: 1.3rem;
-  margin-bottom: 2rem;
   color: var(--text-muted);
+  margin-bottom: 2rem;
 }
 
 #home a {
-  background-color: var(--accent);
+  background: var(--accent);
   color: white;
   padding: 0.75rem 1.5rem;
   border-radius: 25px;
@@ -268,7 +283,7 @@ body.dark .theme-toggle::before {
 }
 
 #home a:hover {
-  background-color: var(--accent-hover);
+  background: var(--accent-hover);
 }
 
 .hero-img {
@@ -283,15 +298,14 @@ body.dark .theme-toggle::before {
 }
 
 .hero-img:hover {
-  transform: scale(1.3);
-  border: 5px solid var(--accent-hover);
+  transform: scale(1.15);
+  border-color: var(--accent-hover);
   transition: transform 1s ease, border-color 1s ease;
 }
 
 /* =====================================================
-   ABOUT SECTION
+   ABOUT
 ===================================================== */
-
 #about {
   background: var(--bg-secondary);
 }
@@ -306,75 +320,61 @@ body.dark .theme-toggle::before {
   font-size: 1.1rem;
 }
 
-/* =====================================================
-   PROJECTS SECTION
-===================================================== */
 
-#projects {
-  background: var(--bg-main);
-}
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
+/* PROJECTS */
 
 .project-card {
   background: var(--bg-secondary);
   padding: 1.5rem;
   border-radius: 10px;
   transition: transform 0.3s, box-shadow 0.3s;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  opacity: 0;
-  animation: fadeInUp 0.8s ease forwards;
+  text-align: center;
 }
 
-.project-content {
-  flex-grow: 1;
-}
-
-
-.project-footer {
-  margin-top: auto;
+.project-card img {
+  width: 100%;
+  height: 20rem;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 1rem;
 }
 
 .project-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.615);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
 }
 
-.project-card h3 {
-  margin-bottom: 0.5rem;
-  color: var(--text-main);
+.project-title {
+  display: inline-block;
+  transition: 0.25s ease, color 0.5s ease;
+  padding-bottom: 10px;
 }
 
-.project-card p {
-  font-size: 0.95rem;
-  margin-bottom: 1rem;
-  color: var(--text-muted);
-}
-
-.project-card a {
+.project-title:hover {
+  transform: scale(1.05);
   color: var(--accent);
-  font-weight: 500;
 }
 
-.project-card a:hover {
-  text-decoration: underline;
+.project-footer {
+  display: inline-block;
+  transition: 0.25s ease, color 0.5s ease;
+  padding-bottom: 10px;
 }
 
-/* =====================================================
-   CONTACT SECTION
-===================================================== */
+.project-footer:hover {
+  color: var(--accent);
+
+}
+
+
+/* CONTACT SECTION */
 
 #contact {
   background: var(--bg-dark);
   color: var(--text-light);
   text-align: center;
+  padding-bottom: 15rem;
+
 }
 
 #contact p {
@@ -386,9 +386,8 @@ body.dark .theme-toggle::before {
   display: inline-block;
   background: var(--accent);
   color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 25px;
-  transition: background 0.3s;
+  padding: 0.5rem 1rem;
+  border-radius: 25%;
 }
 
 #contact a:hover {
@@ -405,13 +404,12 @@ body.dark .theme-toggle::before {
 .contact-icons img {
   width: 2.2rem;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: transform 0.5s ease;
 }
 
 .contact-icons img:hover {
   transform: scale(1.2);
 }
-
 
 /* =====================================================
    FOOTER
@@ -423,14 +421,12 @@ footer {
   text-align: center;
   padding: 1rem 0;
   font-size: 0.9rem;
-  min-height: 10vh;
-  scroll-margin-top: 90px;
 }
 
 /* =====================================================
+/* =====================================================
    SECTION MIN HEIGHT
 ===================================================== */
-
 #about,
 #projects,
 #contact {
@@ -440,7 +436,6 @@ footer {
 /* =====================================================
    ANIMATIONS
 ===================================================== */
-
 /* Hero animation */
 #home h1,
 #home p,
@@ -517,36 +512,31 @@ footer {
 }
 
 /* =====================================================
-   MOBILE LAYOUT (≤ 768px)
+   MOBILE
 ===================================================== */
 
 @media (max-width: 768px) {
-
-  /* Show hamburger */
   .hamburger {
     display: flex;
   }
 
-  /* Turn nav-right into dropdown */
   .nav-right {
     position: absolute;
     top: 64px;
-    /* matches nav height */
     right: 0;
-    background: var(--bg-dark);
     width: 100%;
+    background: var(--bg-secondary);
+    /* 🔥 lighter */
     flex-direction: column;
     align-items: center;
     gap: 1rem;
     padding: 1rem 0;
-    display: flex;
     opacity: 0;
     transform: translateY(-10px);
     pointer-events: none;
-    transition: transform 0.25s ease, opacity 0.2s ease;
+    transition: 0.25s;
   }
 
-  /* When menu is open */
   .nav-right.open {
     opacity: 1;
     transform: translateY(0);
@@ -571,4 +561,5 @@ footer {
   section {
     padding: 4rem 1rem;
   }
+
 }

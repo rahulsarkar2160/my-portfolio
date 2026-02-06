@@ -3,10 +3,11 @@ export default function ProjectCard({ project }) {
         <div className="project-card">
             <div className="project-content">
                 <h3>
-                    <a href={project.link} target="_blank" rel="noreferrer">
+                    <a className="project-title" href={project.link} target="_blank" rel="noreferrer">
                         {project.title}
                     </a>
                 </h3>
+                <img src={project.photo} alt="" />
 
                 <p>{project.description}</p>
             </div>

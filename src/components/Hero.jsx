@@ -12,10 +12,10 @@ export default function Hero() {
             <Link
                 to="projects"
                 smooth={{ duration: 500, ease: "easeInOutCubic" }}
-                className="hero-cta"
+                style={{ fontFamily: "Handjet", fontSize: 25 }}
             >
                 View My Work
             </Link>
-        </section>
+        </section >
     );
 }

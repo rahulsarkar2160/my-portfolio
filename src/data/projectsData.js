@@ -1,3 +1,7 @@
+import spendSmartImg from '../assets/images/projects/spendsmart.png'
+import memoryMap from '../assets/images/projects/memorymap.png'
+
+
 export const projects = [
     {
         title: "SpendSmart",
@@ -12,7 +16,8 @@ export const projects = [
             "REST API"
         ],
         github: "https://github.com/rahulsarkar2160/spendsmart-frontend",
-        link: "https://spendsmart-seven.vercel.app/"
+        link: "https://spendsmart-seven.vercel.app/",
+        photo: spendSmartImg,
     },
 
     {
@@ -28,7 +33,8 @@ export const projects = [
             "JavaScript"
         ],
         github: "https://github.com/rahulsarkar2160/MemoryMap",
-        link: "https://memorymap-yvcg.onrender.com/"
+        link: "https://memorymap-yvcg.onrender.com/",
+        photo: memoryMap
     },
 
     {
