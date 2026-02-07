@@ -1,13 +1,19 @@
 export default function ProjectCard({ project }) {
     return (
-        <div className="project-card">
+        <div className="project-card scroll-appear">
             <div className="project-content">
                 <h3>
-                    <a className="project-title" href={project.link} target="_blank" rel="noreferrer">
+                    <a
+                        className="project-title"
+                        href={project.link}
+                        target="_blank"
+                        rel="noreferrer"
+                    >
                         {project.title}
                     </a>
                 </h3>
-                <img src={project.photo} alt="" />
+
+                <img src={project.photo} alt={project.title} />
 
                 <p>{project.description}</p>
             </div>

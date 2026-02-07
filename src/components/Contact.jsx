@@ -26,39 +26,58 @@ export default function Contact() {
     }, []);
 
     return (
-        <section id="contact">
-            <h2>Contact Me</h2>
-            <p>Let’s connect or work together 🚀</p>
+        <section id="contact" className="section">
+            <h2 className="fade-in delay-1">Contact Me</h2>
 
-            <div className="contact-icons">
+            <p className="fade-in delay-2">
+                Let’s connect or work together 🚀
+            </p>
+
+            <div className="contact-icons reveal-children">
                 <a
+                    className="fade-in"
                     href="https://github.com/rahulsarkar2160"
                     target="_blank"
                     rel="noreferrer"
                     title="GitHub"
                 >
-                    <img src={darkMode ? githubDark : githubLight} alt="GitHub" />
+                    <img
+                        src={darkMode ? githubDark : githubLight}
+                        alt="GitHub" />
                 </a>
 
                 <a
+                    className="fade-in"
                     href="https://linkedin.com/in/rahul-sarkar-1150b5202"
                     target="_blank"
                     rel="noreferrer"
                     title="LinkedIn"
                 >
-                    <img src={darkMode ? linkedinDark : linkedinLight} alt="LinkedIn" />
-                </a>
-
-                <a href="mailto:rahulsarkar4320@gmail.com" title="Email">
-                    <img src={darkMode ? emailDark : emailLight} alt="Email" />
+                    <img
+                        src={darkMode ? linkedinDark : linkedinLight}
+                        alt="LinkedIn"
+                    />
                 </a>
 
                 <a
+                    className="fade-in"
+                    href="mailto:rahulsarkar4320@gmail.com"
+                    title="Email"
+                >
+                    <img
+                        src={darkMode ? emailDark : emailLight}
+                        alt="Email" />
+                </a>
+
+                <a
+                    className="fade-in"
                     href="/resume/Rahul_Sarkar_FullStack_Developer.pdf"
                     download
                     title="Download Resume"
                 >
-                    <img src={darkMode ? resumeDark : resumeLight} alt="Resume" />
+                    <img
+                        src={darkMode ? resumeDark : resumeLight}
+                        alt="Resume" />
                 </a>
             </div>
         </section>

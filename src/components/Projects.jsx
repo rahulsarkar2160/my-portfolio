@@ -3,9 +3,10 @@ import ProjectCard from "./ProjectCard";
 
 export default function Projects() {
     return (
-        <section id="projects">
-            <h2>Projects</h2>
-            <div className="projects-grid">
+        <section id="projects" className="section">
+            <h2 className="fade-in">Projects</h2>
+
+            <div className="projects-grid reveal-children">
                 {projects.map((p, i) => (
                     <ProjectCard key={i} project={p} />
                 ))}

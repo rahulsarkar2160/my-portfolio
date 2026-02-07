@@ -1,6 +1,7 @@
-/* ------------------------------
-   Global Reset & Base Styles
---------------------------------*/
+/* ===============================
+   GLOBAL RESET & BASE STYLES
+================================ */
+
 * {
   margin: 0;
   padding: 0;
@@ -8,13 +9,13 @@
 }
 
 html {
+  font-size: 100%;
+  /* accessibility-friendly */
   scroll-behavior: auto;
-  font-size: 20px;
-
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", system-ui, sans-serif;
   background-color: var(--bg-main);
   color: var(--text-main);
   line-height: 1.6;
@@ -27,12 +28,12 @@ a {
 
 ul {
   list-style: none;
-  padding: 0;
 }
 
-/* ------------------------------
-   Utility Classes
---------------------------------*/
+/* ===============================
+   UTILITIES
+================================ */
+
 .container {
   max-width: 1100px;
   margin: 0 auto;
@@ -41,51 +42,83 @@ ul {
 
 .btn {
   display: inline-block;
-  background-color: #4f9eff;
+  background-color: var(--accent);
   color: white;
   padding: 0.75rem 1.5rem;
   border-radius: 25px;
-  text-decoration: none;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
 }
 
 .btn:hover {
-  background-color: #2d7ee0;
+  background-color: var(--accent-hover);
 }
 
-/* ------------------------------
-   Section Defaults
---------------------------------*/
+/* ===============================
+   SECTION HELPERS
+================================ */
+
 section {
-  padding: 5rem 2rem;
+  scroll-margin-top: 90px;
+  /* fixed navbar offset */
 }
 
-section h2 {
+.section {
+  padding: 6rem 2rem;
+}
+
+.section h2 {
   font-size: 2.2rem;
   margin-bottom: 1.5rem;
   text-align: center;
 }
 
-section p {
-  color: #555;
+.section p {
   max-width: 700px;
   margin: 0 auto;
   text-align: center;
+  color: var(--text-muted);
 }
 
-/* ==============================
-   Scroll Animations (Global)
-============================== */
+/* ===============================
+   ANIMATION UTILITIES
+================================ */
 
-/* Base animation class */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
+}
+
+.fade-in.visible {
   animation: fadeInUp 0.8s ease forwards;
 }
 
-/* Slight delay utility classes */
-.delay-1 {
+.reveal-children .fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.reveal-children.visible .fade-in {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* TRUE sequential order */
+.reveal-children.visible .fade-in:nth-child(1) {
+  animation-delay: 0.15s;
+}
+
+.reveal-children.visible .fade-in:nth-child(2) {
+  animation-delay: 0.35s;
+}
+
+.reveal-children.visible .fade-in:nth-child(3) {
+  animation-delay: 0.55s;
+}
+
+.reveal-children.visible .fade-in:nth-child(4) {
+  animation-delay: 0.75s;
+}
+
+/* .delay-1 {
   animation-delay: 0.2s;
 }
 
@@ -97,7 +130,10 @@ section p {
   animation-delay: 0.6s;
 }
 
-/* Keyframes */
+.delay-4 {
+  animation-delay: 0.8s;
+} */
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -107,5 +143,35 @@ section p {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    scale: 0.65;
+  }
+
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+.scroll-appear {
+  animation-name: appear;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+
+/* Fallback for unsupported browsers */
+@supports not (animation-timeline: view()) {
+  .scroll-appear {
+    opacity: 1;
+    transform: none;
   }
 }
