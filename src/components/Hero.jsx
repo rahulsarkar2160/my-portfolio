@@ -18,8 +18,7 @@ export default function Hero() {
                 about making apps that feel good to use, not just look impressive. I value
                 clear interfaces, readable code, and products that feel human.
                 <br /><br />
-                If something breaks, I’ll probably sigh, grab coffee, and fix it anyway —
-                because I genuinely enjoy figuring things out and making the web a little
+                If something breaks, I’ll probably sigh, grab coffee, and fix it anyway; because I genuinely enjoy figuring things out and making the web a little
                 nicer.
             </p>
 
@@ -27,8 +26,7 @@ export default function Hero() {
                 to="projects"
                 smooth={true}
                 duration={500}
-                offset={-90}
-                className="fade-in delay-3"
+                className="hero-cta fade-in delay-3"
                 style={{ fontFamily: "Handjet", fontSize: 25 }}
             >
                 View My Work

@@ -9,21 +9,25 @@ import resumeLight from "../assets/icons/resume-light.png";
 import { useEffect, useState } from "react";
 
 export default function Contact() {
-    const [darkMode, setDarkMode] = useState(
-        document.body.classList.contains("dark")
-    );
+    const [darkMode, setDarkMode] = useState(false);
+
 
     useEffect(() => {
-        const handleThemeChange = () => {
+        const syncTheme = () => {
             setDarkMode(document.body.classList.contains("dark"));
         };
 
-        window.addEventListener("theme-change", handleThemeChange);
+        // 🔥 runs on first render (fixes refresh bug)
+        syncTheme();
+
+        // 🔁 runs on toggle
+        window.addEventListener("theme-change", syncTheme);
 
         return () => {
-            window.removeEventListener("theme-change", handleThemeChange);
+            window.removeEventListener("theme-change", syncTheme);
         };
     }, []);
+
 
     return (
         <section id="contact" className="section">
@@ -41,9 +45,7 @@ export default function Contact() {
                     rel="noreferrer"
                     title="GitHub"
                 >
-                    <img
-                        src={darkMode ? githubDark : githubLight}
-                        alt="GitHub" />
+                    <img src={darkMode ? githubDark : githubLight} alt="GitHub" />
                 </a>
 
                 <a
@@ -53,10 +55,7 @@ export default function Contact() {
                     rel="noreferrer"
                     title="LinkedIn"
                 >
-                    <img
-                        src={darkMode ? linkedinDark : linkedinLight}
-                        alt="LinkedIn"
-                    />
+                    <img src={darkMode ? linkedinDark : linkedinLight} alt="LinkedIn" />
                 </a>
 
                 <a
@@ -64,9 +63,7 @@ export default function Contact() {
                     href="mailto:rahulsarkar4320@gmail.com"
                     title="Email"
                 >
-                    <img
-                        src={darkMode ? emailDark : emailLight}
-                        alt="Email" />
+                    <img src={darkMode ? emailDark : emailLight} alt="Email" />
                 </a>
 
                 <a
@@ -75,9 +72,7 @@ export default function Contact() {
                     download
                     title="Download Resume"
                 >
-                    <img
-                        src={darkMode ? resumeDark : resumeLight}
-                        alt="Resume" />
+                    <img src={darkMode ? resumeDark : resumeLight} alt="Resume" />
                 </a>
             </div>
         </section>

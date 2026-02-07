@@ -58,8 +58,7 @@ ul {
 ================================ */
 
 section {
-  scroll-margin-top: 90px;
-  /* fixed navbar offset */
+  scroll-margin-top: 64px;
 }
 
 .section {
@@ -70,6 +69,7 @@ section {
   font-size: 2.2rem;
   margin-bottom: 1.5rem;
   text-align: center;
+  font-family: "Handjet", sans-serif;
 }
 
 .section p {
