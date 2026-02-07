@@ -23,22 +23,23 @@
 ========================= */
 
 :root {
-  --bg-main: #f8fafc;
-  --bg-secondary: #f1f5f9;
-  --bg-dark: #e2e8f0;
-  --bg-footer: #e5e7eb;
+  --bg-main: #ffffff;
+  --bg-secondary: #e3e4e4;
+  --bg-dark: #ced1d4;
+  --bg-footer: #e6ebf2;
 
   --text-main: #0f172a;
-  --text-muted: #64748b;
+  --text-muted: #475569;
   --text-light: #020617;
   --text-footer: #334155;
 
-  --accent: #3b82f6;
-  --accent-hover: #2563eb;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
 
   --transition-fast: 0.25s ease;
   --transition-medium: 0.5s ease;
 }
+
 
 body.dark {
   --bg-main: #0b0b0b;
@@ -277,10 +278,12 @@ body.dark .theme-toggle::before {
 .project-title,
 .project-footer {
   display: inline-block;
+  padding: 20px;
   transition: color var(--transition-fast), transform var(--transition-fast);
 }
 
-.project-title:hover {
+.project-title:hover,
+.project-footer:hover {
   color: var(--accent);
   transform: scale(1.05);
 }
@@ -293,6 +296,7 @@ body.dark .theme-toggle::before {
   background: var(--bg-dark);
   color: var(--text-light);
   text-align: center;
+  min-height: 83vh;
 }
 
 .contact-icons {

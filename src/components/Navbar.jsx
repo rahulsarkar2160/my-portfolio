@@ -14,6 +14,11 @@ export default function Navbar() {
     );
     const [menuOpen, setMenuOpen] = useState(false);
 
+    useEffect(() => {
+        document.body.classList.add("dark");
+        setDarkMode(true);
+        window.dispatchEvent(new Event("theme-change"));
+    }, []);
 
     useEffect(() => {
         if (darkMode) {
@@ -21,7 +26,10 @@ export default function Navbar() {
         } else {
             document.body.classList.remove("dark");
         }
+
+        window.dispatchEvent(new Event("theme-change"));
     }, [darkMode]);
+
 
 
     return (
@@ -62,25 +70,62 @@ export default function Navbar() {
             <div className={`nav-right ${menuOpen ? "open" : ""}`}>
                 <ul>
                     <li>
-                        <Link smooth={true} duration={500} ease="easeInOutCubic" spy={true} activeClass="active" to="home" onClick={() => setMenuOpen(false)}>
+                        <Link
+                            to="home"
+                            smooth={true}
+                            duration={500}
+                            offset={-64}
+                            spy={true}
+                            activeClass="active"
+                            onClick={() => setMenuOpen(false)}
+                        >
                             Home
                         </Link>
                     </li>
+
                     <li>
-                        <Link smooth={true} duration={500} ease="easeInOutCubic" spy={true} activeClass="active" to="about" onClick={() => setMenuOpen(false)}>
+                        <Link
+                            to="about"
+                            smooth={true}
+                            duration={500}
+                            offset={-64}
+                            spy={true}
+                            activeClass="active"
+                            onClick={() => setMenuOpen(false)}
+                        >
                             About
                         </Link>
                     </li>
+
                     <li>
-                        <Link smooth={true} duration={500} ease="easeInOutCubic" spy={true} activeClass="active" to="projects" onClick={() => setMenuOpen(false)}>
+                        <Link
+                            to="projects"
+                            smooth={true}
+                            duration={500}
+                            offset={-64}
+                            spy={true}
+                            activeClass="active"
+                            onClick={() => setMenuOpen(false)}
+                        >
                             Projects
                         </Link>
                     </li>
+
                     <li>
-                        <Link smooth={true} duration={500} ease="easeInOutCubic" spy={true} isDynamic={true} activeClass="active" to="contact" onClick={() => setMenuOpen(false)}>
+                        <Link
+                            to="contact"
+                            smooth={true}
+                            duration={500}
+                            offset={-64}      // 👈 THIS IS THE KEY
+                            spy={true}
+                            isDynamic={true}
+                            activeClass="active"
+                            onClick={() => setMenuOpen(false)}
+                        >
                             Contact
                         </Link>
                     </li>
+
                 </ul>
 
 

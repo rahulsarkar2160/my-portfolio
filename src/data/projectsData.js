@@ -1,5 +1,7 @@
-import spendSmartImg from '../assets/images/projects/spendsmart.png'
-import memoryMap from '../assets/images/projects/memorymap.png'
+import spendSmartImg from '../assets/images/projects/spendsmart.png';
+import memoryMap from '../assets/images/projects/memorymap.png';
+import weatherApp from '../assets/images/projects/weatherapp.png';
+import chatBot from '../assets/images/projects/chatbot.png'
 
 
 export const projects = [
@@ -49,7 +51,8 @@ export const projects = [
         ]
         ,
         github: "https://github.com/rahulsarkar2160/weather-app",
-        link: "https://weather-app-svii.onrender.com"
+        link: "https://weather-app-svii.onrender.com",
+        photo: weatherApp
     },
 
     {
@@ -65,7 +68,8 @@ export const projects = [
         ]
         ,
         github: "https://github.com/rahulsarkar2160/chatbot-webapp",
-        link: "https://chatbot-webapp-9mey.onrender.com/"
+        link: "https://chatbot-webapp-9mey.onrender.com/",
+        photo: chatBot
     },
 
 
