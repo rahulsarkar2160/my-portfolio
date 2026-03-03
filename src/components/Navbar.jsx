@@ -1,12 +1,14 @@
 import { Link } from "react-scroll";
-import githubDark from "../assets/icons/github-dark.png";
-import githubLight from "../assets/icons/github-light.png";
-import linkedinDark from "../assets/icons/linkedin-dark.png";
-import linkedinLight from "../assets/icons/linkedin-light.png";
+import githubDark from "../assets/icons/GithubDark.svg";
+import githubLight from "../assets/icons/GithubLight.svg";
+import linkedinDark from "../assets/icons/Linkedin.svg";
+import linkedinLight from "../assets/icons/Linkedin.svg";
 import emailDark from "../assets/icons/email-dark.png";
 import emailLight from "../assets/icons/email-light.png";
 import { useEffect, useState } from "react";
 import { useActiveSection } from "../hooks/useActiveSection";
+import './styles/Navbar.css'
+
 
 export default function Navbar() {
     const [darkMode, setDarkMode] = useState(true);

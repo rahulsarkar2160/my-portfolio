@@ -1,5 +1,5 @@
-import githubDark from "../assets/icons/github-dark.png";
-import githubLight from "../assets/icons/github-light.png";
+import githubDark from "../assets/icons/GitHubDark.svg";
+import githubLight from "../assets/icons/GitHubLight.svg";
 import linkedinDark from "../assets/icons/linkedin-dark.png";
 import linkedinLight from "../assets/icons/linkedin-light.png";
 import emailDark from "../assets/icons/email-dark.png";
@@ -31,7 +31,7 @@ export default function Contact() {
 
     return (
         <section id="contact" className="section">
-            <h2 className="fade-in delay-1">Contact Me</h2>
+            <h1 className="fade-in delay-1">Contact Me</h1>
 
             <p className="fade-in delay-2">
                 Let’s connect or work together 🚀

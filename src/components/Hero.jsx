@@ -4,7 +4,6 @@ import profile from "../assets/images/profile.jpg";
 export default function Hero() {
     return (
         <section id="home" className="section">
-            {/* Animation wrapper */}
             <div className="hero-img-wrapper fade-in delay-1">
                 <img
                     src={profile}
@@ -27,7 +26,7 @@ export default function Hero() {
                 smooth={true}
                 duration={500}
                 className="hero-cta fade-in delay-3"
-                style={{ fontFamily: "Handjet", fontSize: 25 }}
+                style={{ fontFamily: "HandjetBold", fontSize: 25 }}
             >
                 View My Work
             </Link>

@@ -13,8 +13,8 @@ export function useActiveSection(sectionIds) {
                 });
             },
             {
-                rootMargin: "-64px 0px -50% 0px", // navbar height + early switch
-                threshold: 0.1,
+                rootMargin: "-64px 0px -80% 0px", // only top 20% of viewport triggers
+                threshold: 0,
             }
         );
 

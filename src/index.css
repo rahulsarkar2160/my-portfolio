@@ -1,3 +1,69 @@
+/* Theme Variables */
+
+:root {
+  --bg-main: #ffffff;
+  --bg-secondary: #e3e4e4;
+  --bg-dark: #ced1d4;
+  --bg-footer: #e6ebf2;
+
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --text-light: #020617;
+  --text-footer: #334155;
+
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+
+  --transition-fast: 0.25s ease;
+  --transition-medium: 0.5s ease;
+}
+
+
+body.dark {
+  --bg-main: #0b0b0b;
+  --bg-secondary: #282828;
+  --bg-dark: #1f1f1f;
+  --bg-footer: #000000;
+
+  --text-main: #e6e6e6;
+  --text-muted: #bbbbbb;
+  --text-light: #ffffff;
+  --text-footer: #bbbbbb;
+}
+
+
+
+/* Fonts */
+
+@font-face {
+  font-family: "Handjet";
+  src: url("../src/assets/fonts/Handjet/Handjet-Thin.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "HandjetBold";
+  src: url("../src/assets/fonts/Handjet/Handjet-SemiBold.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: "Handlee";
+  src: url("/src/assets/fonts/Handlee/Handlee-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "CedarvilleCursive";
+  src: url("/src/assets/fonts/Cedarville_Cursive/CedarvilleCursive-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
+
 /* ===============================
    GLOBAL RESET & BASE STYLES
 ================================ */
@@ -10,12 +76,11 @@
 
 html {
   font-size: 100%;
-  /* accessibility-friendly */
   scroll-behavior: auto;
 }
 
 body {
-  font-family: "Poppins", system-ui, sans-serif;
+  font-family: Handlee, system-ui;
   background-color: var(--bg-main);
   color: var(--text-main);
   line-height: 1.6;
@@ -28,6 +93,10 @@ a {
 
 ul {
   list-style: none;
+}
+
+p {
+  font-size: 2rem
 }
 
 /* ===============================
@@ -65,11 +134,11 @@ section {
   padding: 6rem 2rem;
 }
 
-.section h2 {
-  font-size: 2.2rem;
+.section h1 {
+  font-size: 3rem;
   margin-bottom: 1.5rem;
   text-align: center;
-  font-family: "Handjet", sans-serif;
+  font-family: Handjet, sans-serif;
 }
 
 .section p {
@@ -173,5 +242,16 @@ section {
   .scroll-appear {
     opacity: 1;
     transform: none;
+  }
+}
+
+body {
+  user-select: none;
+}
+
+@media (max-width: 768px) {
+
+  p {
+    font-size: 1.5rem;
   }
 }

@@ -1,0 +1,36 @@
+.project-card {
+    background: var(--bg-secondary);
+    padding: 1.5rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.project-card img {
+    width: 60rem;
+    height: 30rem;
+    object-fit: contain;
+    margin-bottom: 0;
+}
+
+h2 {
+    font-size: 2.2rem
+}
+
+.project-link {
+    font-size: 1.5rem;
+    display: inline-block;
+    width: 10rem;
+}
+
+.project-link:hover {
+    color: var(--accent);
+    transition: 0.7s;
+}

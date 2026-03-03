@@ -2,26 +2,33 @@ export default function ProjectCard({ project }) {
     return (
         <div className="project-card scroll-appear">
             <div className="project-content">
-                <h3>
+
+                <h2>{project.title}</h2>
+
+                <div>
                     <a
-                        className="project-title"
                         href={project.link}
                         target="_blank"
-                        rel="noreferrer"
+                        rel="noopener noreferrer"
+                        className="project-link"
                     >
-                        {project.title}
+                        Live Project
                     </a>
-                </h3>
+
+                    <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="project-link"
+                    >
+                        GitHub
+                    </a>
+                </div>
 
                 <img src={project.photo} alt={project.title} />
 
                 <p>{project.description}</p>
-            </div>
 
-            <div className="project-footer">
-                <a href={project.github} target="_blank" rel="noreferrer">
-                    GitHub
-                </a>
             </div>
         </div>
     );
