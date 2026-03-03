@@ -1,8 +1,8 @@
 import { Link } from "react-scroll";
 import githubDark from "../assets/icons/GithubDark.svg";
 import githubLight from "../assets/icons/GithubLight.svg";
-import linkedinDark from "../assets/icons/Linkedin.svg";
-import linkedinLight from "../assets/icons/Linkedin.svg";
+import linkedinDark from "../assets/icons/LinkedIn.svg";
+import linkedinLight from "../assets/icons/LinkedIn.svg";
 import emailDark from "../assets/icons/email-dark.png";
 import emailLight from "../assets/icons/email-light.png";
 import { useEffect, useState } from "react";
