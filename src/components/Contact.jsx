@@ -1,5 +1,5 @@
-import githubDark from "../assets/icons/GitHubDark.svg";
-import githubLight from "../assets/icons/GitHubLight.svg";
+import githubDark from "../assets/icons/GithubDark.svg";
+import githubLight from "../assets/icons/GithubLight.svg";
 import linkedinDark from "../assets/icons/linkedin-dark.png";
 import linkedinLight from "../assets/icons/linkedin-light.png";
 import emailDark from "../assets/icons/email-dark.png";
