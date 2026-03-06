@@ -7,7 +7,7 @@
   height: 26px;
   border-radius: 50px;
   border: 1px solid var(--accent);
-  background: var(--bg-secondary);
+  background: transparent;
   cursor: pointer;
   position: relative;
 }
@@ -39,14 +39,24 @@ body.dark .theme-toggle::before {
 #home {
   min-height: calc(100vh - 64px);
   margin-top: 64px;
-
+  position: relative;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
   text-align: center;
-  background: linear-gradient(135deg, var(--bg-main), var(--bg-secondary));
+
+  background: linear-gradient(180deg,
+      var(--bg-main),
+      var(--bg-secondary));
+}
+
+#about {
+  background: linear-gradient(180deg,
+      var(--bg-secondary),
+      var(--bg-main));
 }
 
 #home h1 {
@@ -97,6 +107,7 @@ body.dark .theme-toggle::before {
   padding: 0.6rem 1.4rem;
   border-radius: 999px;
   cursor: pointer;
+  pointer-events: auto;
 
   color: var(--accent);
   border: 2px solid var(--accent);
@@ -121,7 +132,16 @@ body.dark .theme-toggle::before {
   box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.35);
 }
 
+.hero-text {
+  width: min(800px, 90%);
+  margin: 0 auto;
+  line-height: 1.6;
+}
 
+.hero-text p {
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
 
 
 
@@ -163,4 +183,13 @@ footer {
   text-align: center;
   padding: 1rem 0;
   font-size: 0.9rem;
+}
+
+.hero-text {
+  pointer-events: none;
+}
+
+.about-section>* {
+  position: relative;
+  z-index: 1;
 }

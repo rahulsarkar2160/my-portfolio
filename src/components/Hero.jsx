@@ -1,9 +1,12 @@
 import { Link } from "react-scroll";
 import profile from "../assets/images/profile.jpg";
+import ParticlesHero from "./ParticlesHero.jsx";
 
 export default function Hero() {
     return (
         <section id="home" className="section">
+            <ParticlesHero />
+
             <div className="hero-img-wrapper fade-in delay-1">
                 <img
                     src={profile}
@@ -12,14 +15,30 @@ export default function Hero() {
                 />
             </div>
 
-            <p className="fade-in delay-2">
-                Hey 👋 I'm Rahul. I learn by building, breaking, and rebuilding, and I care
-                about making apps that feel good to use, not just look impressive. I value
-                clear interfaces, readable code, and products that feel human.
-                <br /><br />
-                If something breaks, I’ll probably sigh, grab coffee, and fix it anyway; because I genuinely enjoy figuring things out and making the web a little
-                nicer.
-            </p>
+            <div className="hero-text fade-in delay-2">
+
+                <h2>Hey! I'm Rahul</h2>
+
+                <p className="fade-in">
+                    I enjoy building and experimenting with software, learning by building, breaking, and improving things along the way. My focus is on creating applications that are both technically solid and enjoyable to use.
+
+                </p>
+
+                <p className="particle-hint">
+                    click anywhere to create more particles
+                </p>
+
+                <p className="fade-in">
+                    I care about clear interfaces, maintainable code, and thoughtful product design. Most of the projects here are built while exploring modern web technologies and solving practical problems through code.
+
+                </p>
+
+                <p className="fade-in">
+                    For me, debugging and improving systems is part of the process — every problem is a chance to learn something new.
+                </p>
+
+
+            </div>
 
             <Link
                 to="projects"
@@ -30,6 +49,7 @@ export default function Hero() {
             >
                 View My Work
             </Link>
+
         </section>
     );
 }

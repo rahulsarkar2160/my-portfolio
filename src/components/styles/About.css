@@ -1,1 +1,96 @@
-/* empty for now */
+/* TOOLS SECTION */
+
+.tools {
+    margin-top: 2rem;
+    padding: 2rem;
+    text-align: center;
+}
+
+.tools-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+
+    max-width: 60rem;
+    margin-left: auto;
+    margin-right: auto;
+
+    padding: 1.5rem;
+    border-radius: 20px;
+}
+
+.icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.skill-name {
+    display: inline-block;
+    padding: 0.35rem 0.75rem;
+
+    border-radius: 999px;
+    border: 1px solid var(--bg-dark);
+    background: var(--bg-secondary);
+
+    font-size: 1.2rem;
+    white-space: nowrap;
+
+    transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.skill-name:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.05);
+}
+
+/* ABOUT SECTION */
+
+.about-section {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Ensure content sits above background icons */
+
+.about-section>* {
+    position: relative;
+    z-index: 1;
+}
+
+/* Background icons container */
+
+.about-bg-icons {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Floating background icons */
+
+.bg-icon {
+    position: absolute;
+    opacity: 0.4;
+    animation: floatRotate linear infinite;
+
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+/* Floating + rotation animation */
+
+@keyframes floatRotate {
+    0% {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(20px, -25px) rotate(180deg);
+    }
+
+    100% {
+        transform: translate(0px, 0px) rotate(360deg);
+    }
+}

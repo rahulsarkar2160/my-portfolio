@@ -1,16 +1,23 @@
 .project-card {
-    background: var(--bg-secondary);
+    background: var(--bg-card);
     padding: 1.5rem;
     margin: 2rem auto;
     max-width: 1200px;
     border-radius: 10px;
+    border: 1px solid var(--border-card);
     text-align: center;
-    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+
+    transition: transform var(--transition-fast),
+        box-shadow var(--transition-fast);
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+body.dark .project-card:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 .project-card img {

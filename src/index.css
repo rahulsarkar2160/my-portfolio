@@ -1,15 +1,19 @@
 /* Theme Variables */
 
 :root {
-  --bg-main: #ffffff;
-  --bg-secondary: #e3e4e4;
-  --bg-dark: #ced1d4;
-  --bg-footer: #e6ebf2;
+  --bg-nav: #ffffff;
+  --bg-main: #f8fafc;
+  --bg-secondary: #adc8ed;
+  --bg-dark: #cbd5e1;
+  --bg-footer: #e2e8f0;
 
   --text-main: #0f172a;
   --text-muted: #475569;
   --text-light: #020617;
   --text-footer: #334155;
+
+  --bg-card: #ffffff;
+  --border-card: #e2e8f0;
 
   --accent: #2563eb;
   --accent-hover: #1d4ed8;
@@ -20,15 +24,19 @@
 
 
 body.dark {
-  --bg-main: #0b0b0b;
-  --bg-secondary: #282828;
-  --bg-dark: #1f1f1f;
+  --bg-nav: #000000;
+  --bg-main: #000000;
+  --bg-secondary: #515151;
+  --bg-dark: #373737;
   --bg-footer: #000000;
 
   --text-main: #e6e6e6;
   --text-muted: #bbbbbb;
   --text-light: #ffffff;
   --text-footer: #bbbbbb;
+
+  --bg-card: #1e1e1e;
+  --border-card: #2c2c2c;
 }
 
 
@@ -126,7 +134,7 @@ p {
    SECTION HELPERS
 ================================ */
 
-section {
+.section {
   scroll-margin-top: 64px;
 }
 
@@ -134,11 +142,22 @@ section {
   padding: 6rem 2rem;
 }
 
+.section h1,
+.section h2,
+.section h3,
+.section h4 {
+  text-align: center;
+}
+
 .section h1 {
   font-size: 3rem;
   margin-bottom: 1.5rem;
-  text-align: center;
   font-family: Handjet, sans-serif;
+}
+
+.section h3 {
+  font-size: 1.5rem;
+
 }
 
 .section p {
@@ -254,4 +273,16 @@ body {
   p {
     font-size: 1.5rem;
   }
+}
+
+#projects {
+  background: linear-gradient(180deg,
+      var(--bg-main),
+      var(--bg-secondary));
+}
+
+#contact {
+  background: linear-gradient(180deg,
+      var(--bg-secondary),
+      var(--bg-footer));
 }

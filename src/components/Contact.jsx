@@ -68,7 +68,7 @@ export default function Contact() {
 
                 <a
                     className="fade-in"
-                    href="/resume/Rahul_Sarkar_FullStack_Developer.pdf"
+                    href="/resume/Rahul_Sarkar_Software_Developer.pdf"
                     download
                     title="Download Resume"
                 >
