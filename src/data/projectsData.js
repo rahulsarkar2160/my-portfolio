@@ -9,7 +9,7 @@ import devTrack from '../assets/images/projects/devtrack.png';
 export const projects = [
     {
         title: "DevTrack",
-        description: "A SaaS-style project and task management application that allows users to create projects, manage tasks, and track progress through a simple, focused workflow. This project is under active development with additional features and UI enhancements planned.",
+        description: "(Under active development) A SaaS-style project and task management application that allows users to create projects, manage tasks, and track progress through a simple, focused workflow.",
         tech: [
             "Next.js",
             "TypeScript",
