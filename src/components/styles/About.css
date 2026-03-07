@@ -11,7 +11,7 @@
     gap: 1.5rem;
     margin-top: 1.5rem;
 
-    max-width: 60rem;
+    max-width: 65rem;
     margin-inline: auto;
 
     padding: 1.5rem;
@@ -30,7 +30,7 @@
 
     border-radius: 999px;
     border: 1px solid var(--bg-dark);
-    background: var(--bg-secondary);
+    background: var(--contain);
 
     font-size: clamp(0.9rem, 2.5vw, 1.2rem);
     white-space: nowrap;
@@ -40,7 +40,7 @@
 
 .skill-name:hover {
     transform: translateY(-3px);
-    filter: brightness(1.05);
+    filter: brightness(1.7);
 }
 
 

@@ -19,13 +19,15 @@ import NPM from "../assets/icons/NPM.svg";
 import Python from "../assets/icons/Python.svg";
 import CSharp from "../assets/icons/CSharp.svg";
 import NET from "../assets/icons/NET.svg";
+import Linux from "../assets/icons/Linux.svg";
+import ChatGPT from "../assets/icons/ChatGPT.svg";
 
 export const icons = [
-    { name: "HTML5", src: HTML5 },
-    { name: "CSS3", src: CSS3 },
     { name: "JavaScript", src: JavaScript },
     { name: "React", src: React },
     { name: "Next.js", src: Nextjs },
+    { name: "HTML5", src: HTML5 },
+    { name: "CSS3", src: CSS3 },
     { name: "Tailwind CSS", src: Tailwind },
     { name: "Material UI", src: MaterialUI },
 
@@ -41,5 +43,7 @@ export const icons = [
 
     { name: "Python", src: Python },
     { name: "C#", src: CSharp },
-    { name: ".NET", src: NET }
+    { name: ".NET", src: NET },
+    { name: "Linux", src: Linux },
+    { name: "ChatGPT", src: ChatGPT },
 ];

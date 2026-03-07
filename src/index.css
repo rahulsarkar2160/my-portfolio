@@ -11,6 +11,7 @@
   --text-muted: #475569;
   --text-light: #020617;
   --text-footer: #334155;
+  --contain: #397fe23a;
 
   --bg-card: #ffffff;
   --border-card: #e2e8f0;
@@ -34,6 +35,7 @@ body.dark {
   --text-muted: #bbbbbb;
   --text-light: #ffffff;
   --text-footer: #bbbbbb;
+  --contain: #51515171;
 
   --bg-card: #1e1e1e;
   --border-card: #2c2c2c;
@@ -237,7 +239,7 @@ p {
 @keyframes appear {
   from {
     opacity: 0;
-    scale: 0.65;
+    scale: 0.2;
   }
 
   to {

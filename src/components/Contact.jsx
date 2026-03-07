@@ -1,11 +1,10 @@
 import githubDark from "../assets/icons/GithubDark.svg";
 import githubLight from "../assets/icons/GithubLight.svg";
-import linkedinDark from "../assets/icons/linkedin-dark.png";
-import linkedinLight from "../assets/icons/linkedin-light.png";
-import emailDark from "../assets/icons/email-dark.png";
-import emailLight from "../assets/icons/email-light.png";
-import resumeDark from "../assets/icons/resume-dark.png";
-import resumeLight from "../assets/icons/resume-light.png";
+import linkedinDark from "../assets/icons/icons8-linkedin.svg";
+import linkedinLight from "../assets/icons/icons8-linkedin-light.svg";
+import emailDark from "../assets/icons/email2.svg";
+import emailLight from "../assets/icons/email1.svg";
+
 import { useEffect, useState } from "react";
 
 export default function Contact() {

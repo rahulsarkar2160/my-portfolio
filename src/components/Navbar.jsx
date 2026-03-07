@@ -1,10 +1,10 @@
 import { Link } from "react-scroll";
 import githubDark from "../assets/icons/GithubDark.svg";
 import githubLight from "../assets/icons/GithubLight.svg";
-import linkedinDark from "../assets/icons/LinkedIn.svg";
-import linkedinLight from "../assets/icons/LinkedIn.svg";
-import emailDark from "../assets/icons/email-dark.png";
-import emailLight from "../assets/icons/email-light.png";
+import linkedinDark from "../assets/icons/icons8-linkedin.svg";
+import linkedinLight from "../assets/icons/icons8-linkedin-light.svg";
+import emailDark from "../assets/icons/email2.svg";
+import emailLight from "../assets/icons/email1.svg";
 import { useEffect, useState } from "react";
 import { useActiveSection } from "../hooks/useActiveSection";
 import './styles/Navbar.css'
