@@ -1,5 +1,5 @@
 import { Link } from "react-scroll";
-import profile from "../assets/images/profile.jpg";
+import profile from "../assets/images/Rahul_Sarkar_Blur.png";
 import ParticlesHero from "./ParticlesHero.jsx";
 
 export default function Hero() {
@@ -34,7 +34,7 @@ export default function Hero() {
                 </p>
 
                 <p className="fade-in">
-                    For me, debugging and improving systems is part of the process — every problem is a chance to learn something new.
+                    For me, debugging and improving systems is part of the process. Every problem is a chance to learn something.
                 </p>
 
 

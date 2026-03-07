@@ -34,13 +34,12 @@ export default function Navbar() {
                 />
 
                 <div className="nav-icons">
+
                     <a
-                        href="https://github.com/rahulsarkar2160"
-                        target="_blank"
-                        rel="noreferrer"
-                        title="GitHub"
+                        href="mailto:rahulsarkar4320@gmail.com"
+                        title="Email"
                     >
-                        <img src={darkMode ? githubDark : githubLight} alt="GitHub" />
+                        <img src={darkMode ? emailDark : emailLight} alt="Email" />
                     </a>
 
                     <a
@@ -52,9 +51,18 @@ export default function Navbar() {
                         <img src={darkMode ? linkedinDark : linkedinLight} alt="LinkedIn" />
                     </a>
 
-                    <a href="mailto:rahulsarkar4320@gmail.com" title="Email">
-                        <img src={darkMode ? emailDark : emailLight} alt="Email" />
+                    <a
+                        href="https://github.com/rahulsarkar2160"
+                        target="_blank"
+                        rel="noreferrer"
+                        title="GitHub"
+                    >
+                        <img src={darkMode ? githubDark : githubLight} alt="GitHub" />
                     </a>
+
+
+
+
                 </div>
             </div>
 

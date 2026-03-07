@@ -1,6 +1,4 @@
-/* =========================
-   THEME TOGGLE
-========================= */
+/* Theme Toggle */
 
 .theme-toggle {
   width: 52px;
@@ -32,9 +30,7 @@ body.dark .theme-toggle::before {
   content: "☀️";
 }
 
-/* =========================
-   HERO
-========================= */
+/* Hero */
 
 #home {
   min-height: calc(100vh - 64px);
@@ -83,7 +79,6 @@ body.dark .theme-toggle::before {
 }
 
 
-/* hover applies ONLY to the image */
 .hero-img {
   width: 200px;
   height: 200px;
@@ -146,44 +141,77 @@ body.dark .theme-toggle::before {
 
 
 
-/* =========================
-   CONTACT
-========================= */
+/* Contact */
 
 #contact {
   background: var(--bg-dark);
   color: var(--text-light);
   text-align: center;
   min-height: 83vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .contact-icons {
   display: flex;
   justify-content: center;
-  gap: 1.2rem;
-  margin-top: 1rem;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
-.contact-icons img {
-  width: 2.2rem;
+.contact-icons a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  color: inherit;
+
   transition: transform var(--transition-fast);
 }
 
-.contact-icons img:hover {
-  transform: scale(1.2);
+.contact-icons a:hover {
+  transform: translateY(-5px);
 }
 
-/* =========================
-   FOOTER
-========================= */
+.contact-icons img {
+  width: 3rem;
+  transition: transform var(--transition-fast);
+}
+
+.contact-icons a:hover img {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.25));
+}
+
+.contact-icons span {
+  font-size: 0.8rem;
+  opacity: 0.75;
+}
+
+
+/* Footer */
 
 footer {
   background: var(--bg-footer);
   color: var(--text-footer);
   text-align: center;
-  padding: 1rem 0;
-  font-size: 0.9rem;
+
+  padding: 1.2rem 1rem;
+  font-size: clamp(0.75rem, 1.8vw, 0.85rem);
+
+  opacity: 0.9;
 }
+
+.footer p {
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+/* Extras */
 
 .hero-text {
   pointer-events: none;
@@ -192,4 +220,10 @@ footer {
 .about-section>* {
   position: relative;
   z-index: 1;
+}
+
+@media (max-width: 768px) {
+  #contact {
+    min-height: auto;
+  }
 }

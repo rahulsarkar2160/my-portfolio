@@ -2,19 +2,17 @@
 
 .tools {
     margin-top: 2rem;
-    padding: 2rem;
     text-align: center;
 }
 
 .tools-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
     gap: 1.5rem;
     margin-top: 1.5rem;
 
     max-width: 60rem;
-    margin-left: auto;
-    margin-right: auto;
+    margin-inline: auto;
 
     padding: 1.5rem;
     border-radius: 20px;
@@ -34,7 +32,7 @@
     border: 1px solid var(--bg-dark);
     background: var(--bg-secondary);
 
-    font-size: 1.2rem;
+    font-size: clamp(0.9rem, 2.5vw, 1.2rem);
     white-space: nowrap;
 
     transition: transform 0.25s ease, filter 0.25s ease;
@@ -44,6 +42,7 @@
     transform: translateY(-3px);
     filter: brightness(1.05);
 }
+
 
 /* ABOUT SECTION */
 
@@ -93,4 +92,21 @@
     100% {
         transform: translate(0px, 0px) rotate(360deg);
     }
+}
+
+
+/* MOBILE OPTIMIZATION */
+
+@media (max-width: 768px) {
+
+    .tools {
+        margin-top: 1rem;
+    }
+
+    .tools-container {
+        gap: 1rem;
+        margin-top: 1rem;
+        padding: 1rem;
+    }
+
 }

@@ -104,7 +104,7 @@ ul {
 }
 
 p {
-  font-size: 2rem
+  font-size: clamp(1.1rem, 2vw, 2rem);
 }
 
 /* ===============================
@@ -139,7 +139,7 @@ p {
 }
 
 .section {
-  padding: 6rem 2rem;
+  padding: 4rem 2rem;
 }
 
 .section h1,
@@ -269,9 +269,16 @@ body {
 }
 
 @media (max-width: 768px) {
+  section {
+    padding: 2.5rem 1.2rem;
+  }
 
   p {
     font-size: 1.5rem;
+  }
+
+  .project-card {
+    margin: 1rem auto;
   }
 }
 
