@@ -2,7 +2,7 @@ import spendSmartImg from '../assets/images/projects/spendsmart.png';
 import memoryMap from '../assets/images/projects/memorymap.png';
 import weatherApp from '../assets/images/projects/weatherapp.png';
 import chatBot from '../assets/images/projects/chatbot.png';
-import devTrack from '../assets/images/projects/devTrack.png';
+import devTrack from '../assets/images/projects/devtrack.png';
 
 
 
