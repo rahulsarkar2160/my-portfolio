@@ -195,7 +195,8 @@ body.dark .theme-toggle::before {
 
 /* Footer */
 
-footer {
+#footer {
+  width: 100%;
   background: var(--bg-footer);
   color: var(--text-footer);
   text-align: center;
@@ -204,11 +205,13 @@ footer {
   font-size: clamp(0.75rem, 1.8vw, 0.85rem);
 
   opacity: 0.9;
+  box-sizing: border-box;
 }
 
-.footer p {
+#footer p {
   margin: 0;
   letter-spacing: 0.3px;
+  line-height: 1.5;
 }
 
 /* Extras */
@@ -225,5 +228,9 @@ footer {
 @media (max-width: 768px) {
   #contact {
     min-height: auto;
+  }
+
+  #footer p {
+    font-size: 0.75rem;
   }
 }
