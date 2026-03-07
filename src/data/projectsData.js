@@ -1,10 +1,28 @@
 import spendSmartImg from '../assets/images/projects/spendsmart.png';
 import memoryMap from '../assets/images/projects/memorymap.png';
 import weatherApp from '../assets/images/projects/weatherapp.png';
-import chatBot from '../assets/images/projects/chatbot.png'
+import chatBot from '../assets/images/projects/chatbot.png';
+import devTrack from '../assets/images/projects/devTrack.png';
+
 
 
 export const projects = [
+    {
+        title: "DevTrack",
+        description: "A SaaS-style project and task management application that allows users to create projects, manage tasks, and track progress through a simple, focused workflow. This project is under active development with additional features and UI enhancements planned.",
+        tech: [
+            "Next.js",
+            "TypeScript",
+            "Tailwind CSS",
+            "MongoDB",
+            "Prisma",
+            "NextAuth"
+        ],
+        github: "https://github.com/rahulsarkar2160/devtrack",
+        link: "https://devtrack-neon.vercel.app",
+        photo: devTrack
+    },
+
     {
         title: "SpendSmart",
         description: "Expense tracking web app to record, categorize, and analyze personal spending.",
@@ -71,6 +89,7 @@ export const projects = [
         link: "https://chatbot-webapp-9mey.onrender.com/",
         photo: chatBot
     },
+
 
 
 
