@@ -1,10 +1,6 @@
 import { Link } from "react-scroll";
-import githubDark from "../assets/icons/GithubDark.svg";
-import githubLight from "../assets/icons/GithubLight.svg";
-import linkedinDark from "../assets/icons/icons8-linkedin.svg";
-import linkedinLight from "../assets/icons/icons8-linkedin-light.svg";
-import emailDark from "../assets/icons/email2.svg";
-import emailLight from "../assets/icons/email1.svg";
+import signLight from "../assets/images/signature-light.png"
+import signDark from "../assets/images/signature-dark.png"
 import { useEffect, useState } from "react";
 import { useActiveSection } from "../hooks/useActiveSection";
 import './styles/Navbar.css'
@@ -26,14 +22,20 @@ export default function Navbar() {
     return (
         <nav className={menuOpen ? "menu-open" : ""}>
             <div className="nav-left">
-                <button
-                    className="theme-toggle"
-                    aria-label="Toggle light and dark theme"
-                    onClick={() => setDarkMode(!darkMode)}
-                    title="Toggle Theme"
-                />
 
-                <div className="nav-icons">
+                <a
+                    href="https://rahulsarkarportfolio.vercel.app/"
+                    title="Rahul Sarkar"
+                >
+                    <img className="signature" src={darkMode ? signDark : signLight} alt="" />
+
+                </a>
+
+
+
+
+
+                {/* <div className="nav-icons">
 
                     <a
                         href="mailto:rahulsarkar4320@gmail.com"
@@ -63,17 +65,9 @@ export default function Navbar() {
 
 
 
-                </div>
-            </div>
+                </div> */}
 
-            <button
-                className="hamburger"
-                onClick={() => setMenuOpen(!menuOpen)}
-            >
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            </div>
 
             <div className={`nav-right ${menuOpen ? "open" : ""}`}>
                 <ul>
@@ -121,7 +115,32 @@ export default function Navbar() {
                         </Link>
                     </li>
                 </ul>
+
+
             </div>
+
+            <div className="nav-controls">
+                <button
+                    className="theme-toggle"
+                    aria-label="Toggle light and dark theme"
+                    onClick={() => setDarkMode(!darkMode)}
+                    title="Toggle Theme"
+                />
+
+
+                <button
+                    className="hamburger"
+                    onClick={() => setMenuOpen(!menuOpen)}
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
+
+
+
         </nav>
     );
 }
